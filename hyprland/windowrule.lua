@@ -1,0 +1,74 @@
+hl.config({
+    general = {
+        layout = "master"
+    },
+
+    master = {
+        mfact = 0.57,
+        new_status = "slave",
+        orientation = "right"
+    }
+})
+
+-- Smart gaps
+hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
+hl.window_rule({ match = { float = false, group = false, workspace = "w[tv1]" }, border_size = 0 })
+hl.window_rule({ match = { float = false, group = false, workspace = "w[tv1]" }, rounding = 0 })
+hl.window_rule({ match = { float = false, group = false, workspace = "f[1]" }, border_size = 0 })
+hl.window_rule({ match = { float = false, group = false, workspace = "f[1]" }, rounding = 0 })
+
+
+hl.window_rule({
+    name = "Supress Maximize Request",
+    match = { class = "*" },
+    suppress_event = "maximize"
+})
+
+hl.window_rule({
+    name = "xWayland",
+    match = { xwayland = true },
+    border_color = {
+        colors = {
+            "#EA5611",
+            "#CE9C27"
+        },
+        angle = 45
+    }
+})
+
+hl.window_rule({
+    name = "Portal",
+    match = { class = "xdg-desktop-portal.*" },
+    float = true,
+    center = true,
+    size =  {1000, 1000}
+})
+
+hl.window_rule({
+    name = "Polkit elevated",
+    match = { class = "hyprpolkitagent" },
+    border_color = "#FF0000",
+    dim_around = true,
+    stay_focused = true
+})
+
+hl.window_rule({
+    name = "Games",
+    match = { content = 3 },
+    immediate = true,
+    monitor = "DP-1"
+})
+
+hl.window_rule({
+    name = "Opacity",
+    match = { class = "Alacritty" },
+    opacity = 0.95
+})
+
+hl.layer_rule {
+    name = "no_anim_for_quickshell",
+    match = { namespace = "quickshell" },
+    no_anim = true
+}
+
