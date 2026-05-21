@@ -13,11 +13,6 @@ hl.config({
 -- Smart gaps
 hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
 hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
-hl.window_rule({ match = { float = false, group = false, workspace = "w[tv1]" }, border_size = 0 })
-hl.window_rule({ match = { float = false, group = false, workspace = "w[tv1]" }, rounding = 0 })
-hl.window_rule({ match = { float = false, group = false, workspace = "f[1]" }, border_size = 0 })
-hl.window_rule({ match = { float = false, group = false, workspace = "f[1]" }, rounding = 0 })
-
 
 hl.window_rule({
     name = "Supress Maximize Request",
@@ -43,6 +38,18 @@ hl.window_rule({
     float = true,
     center = true,
     size =  {1000, 1000}
+})
+
+hl.window_rule({
+    name = "Fullscreen",
+    match = { fullscreen = true },
+    border_color = {
+        colors = {
+            "#00FFEF",
+            "#0077B6",
+        },
+        angle = 45
+    }
 })
 
 hl.window_rule({
