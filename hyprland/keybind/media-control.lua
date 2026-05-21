@@ -26,7 +26,7 @@ hl.bind("XF86AudioPlay",
 )
 
 hl.bind("SHIFT + XF86AudioPlay",
-    uwsm.dsp("exec, playerctld shift || playerctld daemon"),
+    uwsm.dsp("playerctld shift || playerctld daemon"),
     { desc = "" }
 )
 
