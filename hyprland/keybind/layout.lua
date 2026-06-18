@@ -56,17 +56,37 @@ hl.bind("F17",
 )
 
 hl.bind("SHIFT + F17",
+    hl.dsp.focus({ workspace = "m+1" }),
+    { desc = "Swap Monitor Workspace" }
+)
+
+hl.bind("SUPER + F17",
     hl.dsp.window.move({ workspace = "m-1", follow = false }),
     { desc = "Move Window to Workspace" }
 )
 
-hl.bind("SUPER + F17",
+hl.bind("SHIFT + SUPER + F17",
+    hl.dsp.window.move({ workspace = "m+1", follow = false }),
+    { desc = "Move Window to Workspace" }
+)
+
+hl.bind("CTRL + F17",
     hl.dsp.focus({ monitor  = "-1" }),
     { desc = "Move Focus across Monitors" }
 )
 
-hl.bind("SUPER + SHIFT + F17",
+hl.bind("SHIFT + CTRL + F17",
+    hl.dsp.focus({ monitor  = "+1" }),
+    { desc = "Move Focus across Monitors" }
+)
+
+hl.bind("ALT + F17",
     hl.dsp.window.move({ monitor = "-1" }),
+    { desc = "Move Window across Monitors" }
+)
+
+hl.bind("ALT + SHIFT + F17",
+    hl.dsp.window.move({ monitor = "+1" }),
     { desc = "Move Window across Monitors" }
 )
 
