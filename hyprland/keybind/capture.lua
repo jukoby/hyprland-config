@@ -4,7 +4,7 @@ local user_dirs = require("hyprland.namespace.user-dirs")
 local file_manager = "thunar"
 
 hl.bind("F13",
-    uwsm.dsp("hyprshot -m region --freeze --clipboard-only"),
+    uwsm.dsp("pkill slurp || hyprshot -m region --freeze --clipboard-only"),
     { desc = "Snipping Tool" }
 )
 
