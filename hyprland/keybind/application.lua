@@ -64,4 +64,4 @@ hl.bind("SUPER + F14",
 
 
 hl.bind("CTRL + ALT + P",           uwsm.dsp(""),                   { desc = "Sunshine Setup" }) -- TODO
-hl.bind("Control_L + Alt_L + R",    uwsm.dsp("hyprctl reload"),     { desc = "Reload Hyprland" })
+hl.bind("CTRL + ALT + R",           uwsm.dsp("hyprctl reload"),     { desc = "Reload Hyprland" })
