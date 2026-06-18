@@ -6,7 +6,7 @@ local bg_path = user_dirs.PICTURES .. "/bg/"
 ---@param device string
 ---@param name string
 local set_monitor_bg = function (device, name)
-    uwsm.exec("aww img -o " .. device .. " " .. bg_path .. name)
+    uwsm.exec("awww img -o " .. device .. " " .. bg_path .. name)
 end
 
 hl.on("hyprland.start", function ()
