@@ -61,13 +61,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "Games",
-    match = { content = 3 },
-    immediate = true,
-    monitor = "DP-1"
-})
-
-hl.window_rule({
     name = "Opacity",
     match = { class = "Alacritty" },
     opacity = 0.95
@@ -79,3 +72,14 @@ hl.layer_rule {
     no_anim = true
 }
 
+-- Games
+hl.window_rule({ match = { content = "game" }, tag = "+game" })
+hl.window_rule({ match = { class = "steam_app.*" }, tag = "+game" })
+hl.window_rule({
+    name = "Games",
+    match = { tag = "game" },
+    monitor = "DP-1",
+    workspace = "name:game",
+    fullscreen = true,
+    float = true
+})

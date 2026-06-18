@@ -3,7 +3,6 @@ hl.monitor({
     output = "DP-1",
     mode = "highrr",
     position = "0x0",
-    bitdepth =  10
 })
 
 -- Vertical Monitor
@@ -23,6 +22,7 @@ hl.monitor({
 
 hl.workspace_rule({ workspace = "1", monitor = "DP-1", persistent = true,       default = true })
 hl.workspace_rule({ workspace = "2", monitor = "DP-1", persistent = true })
+hl.workspace_rule({ workspace = "name:game", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "3", monitor = "DP-2", persistent = true,       default = true,     layout_opts = { orientation = "top" } })
 hl.workspace_rule({ workspace = "4", monitor = "DP-2", persistent = true,                           layout_opts = { orientation = "top" } })
 hl.workspace_rule({ workspace = "5", monitor = "HDMI-A-1", persistent = true,   default = true })
