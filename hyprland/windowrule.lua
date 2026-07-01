@@ -78,7 +78,7 @@ hl.window_rule({ match = { class = "steam_app.*" }, tag = "+game" })
 hl.window_rule({
     name = "Games",
     match = { tag = "game" },
-    monitor = "DP-1",
+    monitor = "eDP-1",
     workspace = "name:game",
     fullscreen = true,
     float = true

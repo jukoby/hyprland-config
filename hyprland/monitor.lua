@@ -1,29 +1,35 @@
+local transform = function ()
+    local handle = io.popen("busctl get-property net.hadess.SensorProxy /net/hadess/SensorProxy net.hadess.SensorProxy AccelerometerOrientation")
+    if not handle then return 0 end
+    local result = handle:read("*a")
+    handle:close()
+    if result == 0 or result == "" then return 0 end
+
+    if string.find(result, "normal", 1, true) then
+        return 0
+    elseif string.find(result, "bottom-up", 1, true) then
+        return 2
+    end
+end
+
 -- Main Monitor
 hl.monitor({
-    output = "DP-1",
+    output = "eDP-1",
     mode = "highrr",
-    position = "0x0",
+    transform = transform()
 })
 
--- Vertical Monitor
-hl.monitor({
-    output = "DP-2",
-    mode = "highrr",
-    position = "2560x-420",
-    transform = 3
-})
+hl.workspace_rule({ workspace = "1",  persistent = true,    default = true })
+hl.workspace_rule({ workspace = "2",  persistent = true })
+hl.workspace_rule({ workspace = "name:game" })
+hl.workspace_rule({ workspace = "3",  persistent = true,    default = true })
+hl.workspace_rule({ workspace = "4",  persistent = true })
+hl.workspace_rule({ workspace = "5",  persistent = true,    default = true })
+hl.workspace_rule({ workspace = "6",  persistent = true })
 
--- Secondary Monitor
-hl.monitor({
-    output = "HDMI-A-1",
-    mode = "preferred",
-    position = "-1920x0"
-})
-
-hl.workspace_rule({ workspace = "1", monitor = "DP-1", persistent = true,       default = true })
-hl.workspace_rule({ workspace = "2", monitor = "DP-1", persistent = true })
-hl.workspace_rule({ workspace = "name:game", monitor = "DP-1" })
-hl.workspace_rule({ workspace = "3", monitor = "DP-2", persistent = true,       default = true,     layout_opts = { orientation = "top" } })
-hl.workspace_rule({ workspace = "4", monitor = "DP-2", persistent = true,                           layout_opts = { orientation = "top" } })
-hl.workspace_rule({ workspace = "5", monitor = "HDMI-A-1", persistent = true,   default = true })
-hl.workspace_rule({ workspace = "6", monitor = "HDMI-A-1", persistent = true })
+hl.timer(function()
+    hl.monitor({
+        output = "eDP-1",
+        transform = transform()
+    })
+end, { timeout = 750, type = "repeat" }):set_enabled(true)

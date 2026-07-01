@@ -11,6 +11,6 @@ hl.config({
     },
 
     cursor = {
-        default_monitor = "DP-1"
+        default_monitor = "eDP-1"
     }
 })
