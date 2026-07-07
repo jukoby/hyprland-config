@@ -37,6 +37,7 @@ hl.config({
         middle_click_paste = false,
         size_limits_tiled = true,
         disable_autoreload = false,
+        enable_anr_dialog = false,
     },
 
 })
