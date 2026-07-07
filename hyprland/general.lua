@@ -5,7 +5,10 @@ hl.config({
         border_size = 2,
         gaps_in = 3,
         gaps_out = 4,
-        col = color.DEFAULT_BORDER_COLOR,
+        col = {
+            active_border = color.default_border,
+            inactive_border = color.inactive_border,
+        },
         resize_on_border = true,
         allow_tearing = true,
 

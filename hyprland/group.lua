@@ -6,7 +6,10 @@ hl.config({
         drag_into_group = 2,
         merge_groups_on_drag = false,
 
-        -- col = color.DEFAULT_BORDER_COLOR,
+        col = {
+            border_active = color.default_border,
+            border_inactive = color.inactive_border,
+        },
 
         groupbar = {
             gaps_out = 2,
@@ -18,8 +21,8 @@ hl.config({
             keep_upper_gap = true,
 
             col = {
-                active = "#EE555555",
-                inactive = "#EE333333"
+                active = "#666666F0",
+                inactive = "#333333F0"
             },
             gradients = true,
 

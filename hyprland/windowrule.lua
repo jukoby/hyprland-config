@@ -1,3 +1,5 @@
+local color = require("hyprland.namespace.color")
+
 hl.config({
     general = {
         layout = "master"
@@ -23,13 +25,7 @@ hl.window_rule({
 hl.window_rule({
     name = "xWayland",
     match = { xwayland = true },
-    border_color = {
-        colors = {
-            "#EA5611",
-            "#CE9C27"
-        },
-        angle = 45
-    }
+    border_color = color.warning_border
 })
 
 hl.window_rule({
@@ -43,13 +39,7 @@ hl.window_rule({
 hl.window_rule({
     name = "Fullscreen",
     match = { fullscreen = true },
-    border_color = {
-        colors = {
-            "#00FFEF",
-            "#0077B6",
-        },
-        angle = 45
-    }
+    border_color = color.fullscreen_border
 })
 
 hl.window_rule({
