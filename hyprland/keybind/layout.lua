@@ -90,6 +90,11 @@ hl.bind("ALT + SHIFT + F17",
     { desc = "Move Window across Monitors" }
 )
 
+hl.bind("SUPER + CTRL + F17",
+    hl.dsp.workspace.toggle_special("game"),
+    { desc = "Move Window to Workspace" }
+)
+
 
 -- Groups
 -----------------------------------------------------------

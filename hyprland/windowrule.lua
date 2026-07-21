@@ -57,7 +57,7 @@ hl.window_rule({
 })
 
 hl.layer_rule {
-    name = "no_anim_for_quickshell",
+    name = "No animation for quickshell",
     match = { namespace = "quickshell" },
     no_anim = true
 }
@@ -65,11 +65,13 @@ hl.layer_rule {
 -- Games
 hl.window_rule({ match = { content = "game" }, tag = "+game" })
 hl.window_rule({ match = { class = "steam_app.*" }, tag = "+game" })
+hl.window_rule({ match = { class = "UnleashedRecomp" }, tag = "+game" })
 hl.window_rule({
     name = "Games",
     match = { tag = "game" },
     monitor = "DP-1",
-    workspace = "name:game",
+    workspace = "special:game",
     fullscreen = true,
-    float = true
+    float = true,
+    immediate = true
 })
