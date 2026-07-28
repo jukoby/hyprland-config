@@ -1,6 +1,26 @@
-local matugen = require("hyprland.namespace.matugen")
+local success, matugen = pcall(require,"hyprland.namespace.matugen")
 
-local color = {
+if not success then
+    matugen = {
+        primary = {
+            "#86d4d0",
+            "#000000",
+        },
+        --secondary   = "#aeccca",
+        --secondary_2 = "#c8e6e4",
+        tertiary = {
+            "#7c82fc",
+            "#000000",
+        },
+        outline = {
+            "#889392",
+            "#3e4948",
+        },
+        error = "#ffb4ab",
+    }
+end
+
+return {
     default_border = {
         colors = matugen.primary,
         angle = 45
@@ -24,5 +44,3 @@ local color = {
         angle = 45
     },
 }
-
-return color
