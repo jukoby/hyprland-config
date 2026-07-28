@@ -30,7 +30,7 @@ hl.window_rule({
 
 hl.window_rule({
     name = "Portal",
-    match = { class = "xdg-desktop-portal.*" },
+    match = { class = "xdg-desktop-portal.*|hyprland-share-picker" },
     float = true,
     center = true,
     size =  {1000, 1000}
